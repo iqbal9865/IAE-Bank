@@ -8,6 +8,23 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 <body>
-    <h1 class="text-center">WELCOME TO IAE BANK</h1>
+    <div id="login-area">
+        <h1 class="text-center">WELCOME TO IAE BANK</h1>
+        <div class="submit-area">
+            <input type="email" placeholder="Enter Your Email" class="form-control">
+            <br>
+            <input type="password" placeholder="Enter Your Password" name="" id="" class="form-control"> 
+            <br>
+            <button id="login" class="btn btn-success">Login</button>
+        </div>
+    </div>
+
+
+    <script>
+        var loginBtn = document.getElementById('login');
+        loginBtn.addEventListener('click',function(){
+            console.log('Clicked');
+        })
+    </script>
 </body>
 </html>
