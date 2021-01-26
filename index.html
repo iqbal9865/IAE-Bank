@@ -29,7 +29,7 @@
             <div class="col-md-4">
                 <div class="withdraw status">
                     <h5>Withdraw</h5>
-                <h2>$00</h2>
+                <h2>$ <span id="current-withDraw">00</span> </h2>
                 </div>
             </div>
             <div class="col-md-4">
@@ -73,10 +73,14 @@
         depositBtn.addEventListener('click',function(){
             const depositNumber = getInputNumber('deposit-amount');       
             document.getElementById("deposit-amount").value = "";
-
+            
             const addWithDraw = document.getElementById('addWithDraw');
             addWithDraw.addEventListener("click",function(){
-                const withDrawAmount = getInputNumber('withDrawAmount');
+                const withDrawNumber = getInputNumber('withDrawAmount');
+                updateSpanText('current-withDraw',withDrawNumber);
+                updateSpanText('current-balance', -1 * withDrawNumber);
+
+                document.getElementById("withDrawAmount").value = "";
             })
 
             function getInputNumber(id){
