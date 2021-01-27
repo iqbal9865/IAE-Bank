@@ -74,15 +74,17 @@
             const depositNumber = getInputNumber('deposit-amount');       
             document.getElementById("deposit-amount").value = "";
             
+            //withdraw button event handler
             const addWithDraw = document.getElementById('addWithDraw');
             addWithDraw.addEventListener("click",function(){
                 const withDrawNumber = getInputNumber('withDrawAmount');
-                updateSpanText('current-withDraw',withDrawNumber);
+                updateSpanText('current-withDraw', withDrawNumber);
                 updateSpanText('current-balance', -1 * withDrawNumber);
 
                 document.getElementById("withDrawAmount").value = "";
             })
 
+            //for same types of duplicate code i can use function and pass the parameter, it can reduce our time and make efficient working way
             function getInputNumber(id){
                 const Amount = document.getElementById(id).value;
                 const AmountNumber = parseFloat(Amount);
@@ -92,6 +94,8 @@
             updateSpanText('current-deposit',depositNumber);
             updateSpanText('current-balance',depositNumber);       
 
+
+            //this function calculate deposit and balance as well as withdraw and balance
             function updateSpanText(id,addNumber){
                 const current = document.getElementById(id).innerText;
                 const currentNumber = parseFloat(current);
